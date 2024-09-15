@@ -5,11 +5,11 @@ if [ $(docker ps -a --filter "name=${CONTAINER_NAME}" --format '{{.Names}}' | gr
   # docker rm ${CONTAINER_NAME}
 fi
 
-docker build -t ${CONTAINER_NAME} .
+docker build --build-arg PORT=${PORT} -t ${CONTAINER_NAME} ./app
 
 if [ $PRODUCTION == 1 ]
 then
-  docker run -d -p ${PORT}:8000 --rm --name ${CONTAINER_NAME} -v $(pwd)/src:/src -v $(pwd)/target:/target ${CONTAINER_NAME}
+  docker run -d -p ${PORT}:5000 --rm --name ${CONTAINER_NAME} -v $(pwd)/src:/src -v $(pwd)/target:/target ${CONTAINER_NAME}
 else
-  docker run -p ${PORT}:8000 --rm --name ${CONTAINER_NAME} -v $(pwd)/src:/src -v $(pwd)/target:/target ${CONTAINER_NAME}
+  docker run -p ${PORT}:5000 --rm --name ${CONTAINER_NAME} -v $(pwd)/src:/src -v $(pwd)/target:/target ${CONTAINER_NAME}
 fi

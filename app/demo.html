@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="GET" action="http://localhost:8011/processform">
+
+        <fieldset>
+            <legend>Szövegmezők</legend>
+
+            <label for="text-input">Szöveg:</label>
+            <input type="text" id="text-input" name="text-input" placeholder="Írj ide szöveget"><br><br>
+
+            <label for="email-input">E-mail:</label>
+            <input type="email" id="email-input" name="email-input" placeholder="name@example.com"><br><br>
+
+            <label for="password-input">Jelszó:</label>
+            <input type="password" id="password-input" name="password-input" placeholder="Írj ide jelszót"><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Rádiógombok</legend>
+
+            <label>
+                <input type="radio" name="radio-group" value="option1">
+                Opció 1
+            </label><br>
+
+            <label>
+                <input type="radio" name="radio-group" value="option2">
+                Opció 2
+            </label><br>
+
+            <label>
+                <input type="radio" name="radio-group" value="option3">
+                Opció 3
+            </label><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Jelölőnégyzetek</legend>
+
+            <label>
+                <input type="checkbox" name="checkbox1" value="checkbox1">
+                Jelölőnégyzet 1
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="checkbox2" value="checkbox2">
+                Jelölőnégyzet 2
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="checkbox3" value="checkbox3">
+                Jelölőnégyzet 3
+            </label><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Legördülő menü</legend>
+
+            <label for="dropdown">Válassz egy lehetőséget:</label>
+            <select id="dropdown" name="dropdown">
+                <option value="option1">Lehetőség 1</option>
+                <option value="option2">Lehetőség 2</option>
+                <option value="option3">Lehetőség 3</option>
+            </select><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Szövegdoboz</legend>
+
+            <label for="textarea">Szövegterület:</label><br>
+            <textarea id="textarea" name="textarea" rows="4" cols="50"
+                placeholder="Írj ide hosszabb szöveget"></textarea><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gombok</legend>
+
+            <button type="submit">Küldés</button>
+            <button type="reset">Törlés</button>
+        </fieldset>
+
+    </form>
+</body>
+
+</html>

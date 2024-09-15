@@ -9,14 +9,24 @@ app = Flask(__name__)
 def page_not_found(error = ""):
     return render_template('hu/404.html'), 404
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/processform', methods=['GET', 'POST'])
 def handle_form():
     if request.method == 'POST':
-        # POST kérés esetén a beérkező adatokat a form-data-ból kapjuk
-        form_data = request.form.to_dict()  # Az összes mező adatainak kigyűjtése
-        return render_template_string(display_form_data(form_data))
+        data = request.form.to_dict()
+        return render_template(
+            "processform.html",
+            method=request.method,
+            data=data
+        )
     
-    # GET kérésnél csak egy üzenetet jelenítünk meg
+    if request.method == 'GET':
+        data = request.args.to_dict()
+        return render_template(
+            "processform.html",
+            method=request.method,
+            data=data
+        )
+        
     return "<h2>Küldj egy űrlapot POST metódussal!</h2>"
 
 def display_form_data(form_data):
@@ -41,5 +51,9 @@ def statpage(path = "index.html"):
     except Exception as e:
         return page_not_found()
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == '__main__':             # A webszerver indítása
+    app.run(
+        host="0.0.0.0",
+        port="5000", 
+        debug=True
+    )
