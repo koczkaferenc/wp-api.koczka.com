@@ -1,0 +1,15 @@
+#!/bin/bash
+. .env
+if [ $(docker ps -a --filter "name=${CONTAINER_NAME}" --format '{{.Names}}' | grep -w ${CONTAINER_NAME} | wc -l) -eq 1 ]; then
+  docker stop ${CONTAINER_NAME}
+  # docker rm ${CONTAINER_NAME}
+fi
+
+docker build -t ${CONTAINER_NAME} .
+
+if [ $PRODUCTION == 1 ]
+then
+  docker run -d -p ${PORT}:8000 --rm --name ${CONTAINER_NAME} -v $(pwd)/src:/src -v $(pwd)/target:/target ${CONTAINER_NAME}
+else
+  docker run -p ${PORT}:8000 --rm --name ${CONTAINER_NAME} -v $(pwd)/src:/src -v $(pwd)/target:/target ${CONTAINER_NAME}
+fi

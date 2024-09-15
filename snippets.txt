@@ -1,0 +1,195 @@
+{
+	// Header 1
+	"H1": {
+		"prefix": ["sph"],
+		"body": [
+			"===========================================",
+			"$1"
+			"===========================================",
+			"",
+			"$2"
+		],
+		"description": "h1"
+	}
+
+	"H2": {
+		"prefix": ["sph"],
+		"body": [
+			"-------------------------------------------",
+			"$1",
+			"-------------------------------------------",
+			"",
+			"$2"
+		],
+		"description": "h2"
+	}	
+
+	"H3": {
+		"prefix": ["sph"],
+		"body": [
+			"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+			"$1",
+			"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+			"",
+			"$2"
+
+		],
+		"description": "h3"
+	}	
+
+	"H4": {
+		"prefix": ["sph"],
+		"body": [
+			"$1",
+			"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+			"",
+			"$2"
+		],
+		"description": "h4"
+	}	
+
+	"Bold": {
+		"prefix": ["sph"],
+		"body": ["**$1**"],
+		"description": "Bold"
+	}
+
+	"Italic": {
+		"prefix": ["sph"],
+		"body": ["*$1*"],
+		"description": "Italic"
+	}
+
+	"UL": {
+		"prefix": ["sph"],
+		"body": [
+			"* ${1: Line}",
+			""
+		],
+		"description": "UL"
+	}
+
+	"OL": {
+		"prefix": ["sph"],
+		"body": [
+			"#. ${1: Line}",
+			""
+		],
+		"description": "OL"
+	}
+
+
+	"FieldList": {
+		"prefix": ["sph"],
+		"body": [
+			":${1:name}: ${2:Description}",
+			""
+		],
+		"description": "FieldList"
+	}
+
+	"Tag": {
+		"prefix": ["sph"],
+		"body": [":${1|envvar,dfn,kbd,command,guilabel,abbr,menuselection,program|}:`$2`"],
+		"description": "Tag"
+	}
+
+	"Link": {
+		"prefix": ["sph"],
+		"body": ["`${1:label} <${2:https://url}>`_"],
+		"description": "Link"
+	}
+
+	"Download": {
+		"prefix": ["sph"],
+		"body": [":download:`${1:label} <${2:downloads/file}>`"],
+		"description": "Download"
+	}
+
+	"FileName": {
+		"prefix": ["sph"],
+		"body": [":file:`${1:filename}`"],
+		"description": "FileName"
+	}
+
+	"Reference-link": {
+		"prefix": ["sph"],
+		"body": [":ref:`${1:my-label}-reference`"],
+		"description": "Reference-link"
+	}	
+
+	"Reference-link-manual": {
+		"prefix": ["sph"],
+		"body": [":ref:`${1:my-label} <${2:reference-target}-reference>`"],
+		"description": "Reference-manual"
+	}	
+
+	"Reference-target": {
+		"prefix": ["sph"],
+		"body": [
+			".. _${1:my-label}-reference:",
+			"",
+		]
+		"description": "Reference-target"
+	}	
+
+	"Figure": {
+		"prefix": ["sph"],
+		"body": [
+			".. figure:: images/${1:imagefile}.png",
+			"	:alt: ${2:kepAlaIras}",
+			"	:align: ${3:center}",
+			"	:width: 100%",
+			"	",
+			"	${5:kepAlaIras}",
+			""
+		],
+		"description": "Figure"
+	}
+
+	"Console": {
+		"prefix": ["sph"],
+		"body": [
+			".. code-block:: ${1|console,html,css|}",
+			"	:emphasize-lines: 2",
+			"	:linenos:",
+			"	",
+			"   ${2:ConsoleText}",
+			""
+		],
+		"description": "Code-block:: Console"
+	}
+
+	"Note": {
+		"prefix": ["sph"],
+		"body": [
+			".. ${1|note,warning,tip,danger,error|}::",
+			"	",
+			"	${2:Text}",
+			""
+		]
+		"description": "Note"
+	}	
+
+	"Table": {
+		"prefix": ["sph"],
+		"body": [
+			".. list-table:: Title",
+			"	:widths: 25 25 50",
+			"	:header-rows: 1",
+			"	",
+			"	* - Heading row 1, column 1",
+			"	  - Heading row 1, column 2",
+			"	  - Heading row 1, column 3",
+			"	* - Row 1, column 1",
+			"	  - ",
+			"	  - Row 1, column 3",
+			"	* - Row 2, column 1",
+			"	  - Row 2, column 2",
+			"	  - Row 2, column 3",
+			"",
+		]
+		"description": "Table"
+	}
+
+}
